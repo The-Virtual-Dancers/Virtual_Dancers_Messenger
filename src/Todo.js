@@ -42,12 +42,11 @@ function Todo(props) {
         </Modal>
         <List className="todo__list">
             <ListItem>
-                <ListItemAvatar>
-                </ListItemAvatar>
-                <ListItemText primary={props.todo.todo} secondary="Virtual Dancers 👯‍♂️🕺💃" />
+                <ListItemText primary={props.todo.todo} secondary="Virtual Dancers 👯‍♂️🕺💃" className="todo__list__item"/>
+                <Button variant="contained" onClick={e => setOpen(true)} className="todo__list__button">Edit</Button>
+                <Button variant="contained" onClick={event => db.collection('todos').doc(props.todo.id).delete()}>❌</Button>
             </ListItem>
-            <button onClick={e => setOpen(true)}>Edit</button>
-            <DeleteForeverIcon onClick={event => db.collection('todos').doc(props.todo.id).delete()}/>
+            
         </List>
         </>
     )

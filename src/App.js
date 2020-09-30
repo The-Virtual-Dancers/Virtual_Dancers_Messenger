@@ -36,7 +36,7 @@ function App() {
         <Input value={input} onChange={event => setInput(event.target.value)}/>
       </FormControl>
 
-      <Button disabled={!input} type="submit" onClick={addTodo} variant="contained" color="primary" >Add Message</Button>
+      <Button disabled={!input} type="submit" onClick={addTodo} variant="contained" color="primary" className="add_message_btn">Add Message</Button>
       </form>
 
       <ul>
