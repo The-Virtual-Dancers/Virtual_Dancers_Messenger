@@ -23,6 +23,17 @@ function App() {
     db.collection('todos').add({
       todo: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then((newTodo)=>{
+
+      // Add to localStorage 
+      if(localStorage.getItem('mytodos')){
+        let oldTodos = localStorage.getItem('mytodos')
+        localStorage.setItem('mytodos',`${oldTodos},${newTodo.id}`)
+      }
+      else{
+        localStorage.setItem('mytodos',newTodo.id)
+      }
+
     })
     setInput('')
   }
@@ -40,8 +51,8 @@ function App() {
       </form>
 
       <ul>
-        {todos.map(todo => (
-          <Todo todo={todo}/>
+        {todos.map((todo, index) => (
+          <Todo key={index} todo={todo}/>
         ))}
       </ul>
 
