@@ -1,4 +1,27 @@
-.todo__list{
-    text-align: center;
-    float: center;
+.todo__list {
+  text-align: center;
+  float: center;
+}
+.editFields {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  color: #6f6f6f;
+}
+.editFields input {
+  height: 30px;
+  padding-left: 15px;
+}
+.app form {
+  display: flex;
+  justify-content: space-between;
+}
+.dancerForm .MuiFormControl-root {
+  margin-right: 25px;
 }
