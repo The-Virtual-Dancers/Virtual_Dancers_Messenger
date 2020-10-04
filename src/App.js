@@ -40,10 +40,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Virtual Dancers 👯‍♂️🕺💃 Secret Messenger</h1>
+      <h1>Virtual Dancers <span role="img" aria-label="dancers"> 👯‍♂️🕺💃 </span>Secret Messenger</h1>
       <form>
       <FormControl>
-        <InputLabel>✅ Write a Message</InputLabel>
+        <InputLabel><span role="img" aria-label="tick"> ✅ </span> Write a Message</InputLabel>
         <Input value={input} onChange={event => setInput(event.target.value)}/>
       </FormControl>
 

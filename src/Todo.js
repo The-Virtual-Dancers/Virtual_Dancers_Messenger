@@ -1,9 +1,8 @@
-import { ListItemAvatar, ListItemText } from '@material-ui/core'
+import { ListItemText } from '@material-ui/core'
 import React ,{useState}from 'react'
 import './Todo.css'
 import {ListItem, List, Modal, Button} from '@material-ui/core'
 import db from './firebase'
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
 import {makeStyles} from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme)=> ({
@@ -63,7 +62,7 @@ function Todo(props) {
             <ListItem>
                 <ListItemText primary={props.todo.todo} secondary="Virtual Dancers 👯‍♂️🕺💃" className="todo__list__item"/>
                 { isMyTodo(db.collection('todos').doc(props.todo.id)) && <Button variant="contained" onClick={e => setOpen(true)} className="todo__list__button">Edit</Button> }
-                { isMyTodo(db.collection('todos').doc(props.todo.id)) && <Button variant="contained" onClick={()=>deleteTodo(props.todo.id)}>❌</Button>}
+                { isMyTodo(db.collection('todos').doc(props.todo.id)) && <Button variant="contained" onClick={()=>deleteTodo(props.todo.id)}><span role="img" aria-label="delete">❌</span>                </Button>}
             </ListItem>
             
         </List>
