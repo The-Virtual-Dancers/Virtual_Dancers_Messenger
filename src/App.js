@@ -23,16 +23,27 @@ function App() {
     db.collection('todos').add({
       todo: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then((newTodo)=>{
+
+      // Add to localStorage 
+      if(localStorage.getItem('mytodos')){
+        let oldTodos = localStorage.getItem('mytodos')
+        localStorage.setItem('mytodos',`${oldTodos},${newTodo.id}`)
+      }
+      else{
+        localStorage.setItem('mytodos',newTodo.id)
+      }
+
     })
     setInput('')
   }
 
   return (
     <div className="App">
-      <h1>Virtual Dancers 👯‍♂️🕺💃 Secret Messenger</h1>
+      <h1>Virtual Dancers <span role="img" aria-label="dancers"> 👯‍♂️🕺💃 </span>Secret Messenger</h1>
       <form>
       <FormControl>
-        <InputLabel>✅ Write a Message</InputLabel>
+        <InputLabel><span role="img" aria-label="tick"> ✅ </span> Write a Message</InputLabel>
         <Input value={input} onChange={event => setInput(event.target.value)}/>
       </FormControl>
 
@@ -40,8 +51,8 @@ function App() {
       </form>
 
       <ul>
-        {todos.map(todo => (
-          <Todo todo={todo}/>
+        {todos.map((todo, index) => (
+          <Todo key={index} todo={todo}/>
         ))}
       </ul>
 
