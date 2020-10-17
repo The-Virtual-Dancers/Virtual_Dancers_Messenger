@@ -41,6 +41,7 @@ function Todo(props) {
        }
    }
 
+
    // Delete todo
    function deleteTodo(id) {
        db.collection('todos').doc(id).delete()
@@ -60,7 +61,7 @@ function Todo(props) {
         </Modal>
         <List className="todo__list">
             <ListItem>
-                <ListItemText primary={props.todo.todo} secondary="Virtual Dancers 👯‍♂️🕺💃" className="todo__list__item"/>
+                <ListItemText primary={props.todo.todo} secondary={props.todo.name + " 👯‍♂️🕺💃"} className="todo__list__item"/>
                 { isMyTodo(db.collection('todos').doc(props.todo.id)) && <Button variant="contained" onClick={e => setOpen(true)} className="todo__list__button">Edit</Button> }
                 { isMyTodo(db.collection('todos').doc(props.todo.id)) && <Button variant="contained" onClick={()=>deleteTodo(props.todo.id)}><span role="img" aria-label="delete">❌</span>                </Button>}
             </ListItem>
