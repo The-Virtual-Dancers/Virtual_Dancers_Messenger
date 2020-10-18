@@ -30,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "npm run build && firebase deploy",
-    "precommit": "npm run prettify && npm run lint"
+    "precommit": "npm run prettify"
   },
   "eslintConfig": {
     "extends": "react-app"

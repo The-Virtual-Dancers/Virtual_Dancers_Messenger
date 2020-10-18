@@ -1,6 +1,6 @@
 import { ListItemText, ListItem, List, Modal, Button } from "@material-ui/core";
 import React, { useState } from "react";
-import "./Todo.css";
+import "./css/Todo.css";
 
 import { makeStyles } from "@material-ui/core/styles";
 import db from "./firebase";
