@@ -1,0 +1,52 @@
+.book{
+    /* background-color: black !important; */
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.notebook {
+    background-color: #DAC8B9 !important;
+    border: 1px solid #c8ae98 !important;
+    box-shadow: 1px 1px 0px #feefc4, 2px 2px 0px #d1bba8, inset 2px 0px 0px #d1bba8 !important;
+    border-radius: 5px 15px 15px 5px !important;
+    position: relative !important;
+    width: 20em;
+    height: 28em;
+  }
+  .notebook .ribbon {
+    background-color: #058E72 ;
+    border-left: 1px solid #035d4a ;
+    border-right: 1px solid #035d4a ;
+    border-radius: 0 0 2px 2px ;
+    position: absolute;
+    top: -1px;
+    bottom: -3px;
+    right: 1.5em;
+    width: 1.5em;
+    z-index: 2;
+  }
+  .notebook .wrapper {
+    background-color: #333 !important;
+    border-top: 1px solid #262626 !important;
+    border-bottom: 1px solid #262626 !important;
+    border-left: 1px solid #262626 !important;
+    position: absolute;
+    height: 10em;
+    top: 9em;
+    left: -1px;
+    right: -1px;
+    z-index: 1;
+  }
+  .notebook .h1 {
+    color: #fafafa !important;
+    font-family: "Lato", Arial;
+    font-weight: 700;
+    margin: 2em 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+
+  .create {
+      margin-top: 165px !important;
+  }
