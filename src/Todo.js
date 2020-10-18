@@ -22,12 +22,10 @@ function Todo(props) {
     const [input, setInput] = useState();
 
     const updateTodo = () => {
-        db.collection('todos').doc(props.todo.id).set({
+        db.collection(`groups`).doc(props.groupId).collection('messages').doc(props.todo.id).set({
             todo: input
         }, {merge:true});
-
         setOpen(false);
-
     }
 
     // check User (Browser)
@@ -44,7 +42,7 @@ function Todo(props) {
 
    // Delete todo
    function deleteTodo(id) {
-       db.collection('todos').doc(id).delete()
+    db.collection(`groups`).doc(props.groupId).collection('messages').doc(id).delete()
        let mytodos = localStorage.getItem('mytodos').split(',')
        mytodos.splice(mytodos.indexOf(id), 1)
        localStorage.setItem('mytodos', mytodos)
